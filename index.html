@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Model Portfolio</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav id="navbar">      
+        <ul class="navbar__list">
+            <a href="#welcome-section"><li class="navbar__list-item">About</li></a>
+            <a href="#projects"><li class="navbar__list-item">Projects</li></a>
+            <a href="#foot"><li class="navbar__list-item">Contact</li></a>
+        </ul>
+    </nav>
+        </header>
+    <section id="welcome-section">
+        <h1>Hey I am Kyle <span>a web developer</span></h1>
+    </section>
+    <section id="projects">
+        <h2>Check me out</h2>
+        <div class="projects__container">
+            <div class="projects__flex">
+                <div class="project-tile">
+                    <a href="https://codepen.io/KylesTech95/pen/wvjgNmJ" target="_blank"><img src="button Animation.png" alt="Picture of a button"></a>   
+                <h3 class="project__img-caption">Button Animation</h3>
+                </div> 
+                <div class="project-tile">
+                    <a href="https://codepen.io/KylesTech95/pen/eYMowgE" target="_blank"><img src="emailPreview.png" alt="Email Preview Templatee"></a>
+                <h3 class="project__img-caption">Email Preview Card</h3>
+                </div> 
+                <div class="project-tile">
+                    <a href="https://codepen.io/KylesTech95/pen/BaOwxJJ" target="_blank"><img src="TicTacToe.png" alt="Picture of a button"></a>
+                <h3 class="project__img-caption">Tic-Tac-Toe</h3>
+                </div> 
+                <div class="project-tile">
+                    <a href="https://codepen.io/KylesTech95/pen/yLQBYOG?editors=1111" target="_blank"><img src="btnClick.png" alt="Button Tracker and Button Reset"></a>
+                <h3 class="project__img-caption">Javascript Button Tracker</h3>
+                </div> 
+                
+            </div>  
+            <!--Deal with this last button to complete the project.-->
+            <a href="#" id="profile-link"><button>View More</button></a>
+        </div>
+
+    </section>
+    <footer id="foot">
+        <div class="phone__number">123-456-7890</div>
+        <div class="contact-cta">
+            <h1><span class="clickMe">Click me</span> for the Digits</span></h1>
+        </div>
+        <div class="social__media">
+            <ul class="social__list">
+                <a href="#">Facebook</a>
+                <a href="#">GitHub</a>
+                <a href="mailto:kylestech95@outlook.com">@Email</a>
+                <a href="#">Call</a>
+            </ul>
+        </div>
+    </footer>
+</div>
+</body>
+
+<script>
+    //Trigger the contact phone number to appear;
+    let phn = document.querySelector('.phone__number'),
+    clickMe = document.querySelector('.clickMe');
+    
+    clickMe.addEventListener('click', function(){
+        phn.classList.toggle(`pop`)
+        console.log(phn)
+    })
+
+//Pure Javascript to create the Disclosure Section below the footer.
+    let horiz = document.createElement('hr'),
+    disclosure = document.createElement('section'),
+    wrap = document.querySelector('.wrapper'),
+    para = document.createElement('p'),
+    copy = document.createElement('span');
+
+    //Helper function to appand children to the parent
+    const app = (parent,child) => {
+        parent.append(child);
+    }
+//Styling the elements before applying the helper function
+horiz.style='background: green; width: 100%; border: 1px solid green; height: 4px;'
+app(wrap,horiz);
+disclosure.style='width: 100%; min-width:600px; background: linear-gradient(90deg,#222 33%, #333); display: flex; justify-content: space-between; padding: 4rem 2rem; flex-wrap: wrap; gap: 2rem;'
+app(wrap,disclosure);
+para.innerHTML = '**This is a model portfolio to meet the expectations for the Personal Portfolio certification.';
+copy.innerHTML = '@ Fake CopyWrite';
+para.style='color:#fff;font-family:var(--general-fontStyle); font-size: 22px;'
+copy.style='color:#fff;font-family:var(--general-fontStyle); font-size: 22px;'
+app(disclosure,para);
+app(disclosure,copy);
+
+</script>
+</html>
